@@ -19,16 +19,16 @@
 #  WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
 #  OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
 #  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-#wget -c http://sourceforge.net/projects/libpng/files/libpng12/1.2.56/libpng-1.2.56.tar.xz
+#wget -c http://sourceforge.net/projects/libpng/files/libpng12/1.2.58/libpng-1.2.58.tar.xz
 
 PKGNAM=libpng
 VERSION=${VERSION:-$(echo $PKGNAM-*.tar.xz | rev | cut -f 3- -d . | cut -f 1 -d - | rev)}
 BUILD=${BUILD:-1}
 
-tar xvf libpng-1.2.56.tar.xz 
-mv libpng-1.2.56 libpng-compat-1.2.56
-tar cJf libpng-compat-1.2.56.tar.xz libpng-compat-1.2.56
-rm -rf libpng-compat-1.2.56
+tar xvf libpng-1.2.58.tar.xz 
+mv libpng-1.2.58 libpng-compat-1.2.58
+tar cJf libpng-compat-1.2.58.tar.xz libpng-compat-1.2.58
+rm -rf libpng-compat-1.2.58
 
 # Automatically determine the architecture we're building on:
 if [ -z "$ARCH" ]; then
@@ -144,13 +144,13 @@ mkdir -p $PKG/install
 rm -rf $PKG/usr/include
 rm -rf $PKG/usr/man
 rm -rf $PKG/usr/lib64/pkgconfig
-rm -rf $PKG/usr/lib64/libpng.so.3.56.0
+rm -rf $PKG/usr/lib64/libpng.so.3.58.0
 rm -rf $PKG/usr/lib64/libpng.so.3
 rm -rf $PKG/usr/lib64/libpng.la
 rm -rf $PKG/usr/lib64/libpng12.la
 rm -rf $PKG/usr/lib64/libpng.so
 rm -rf $PKG/usr/bin
-rm -rf $CWD/libpng-compat-1.2.56.tar.xz
+rm -rf $CWD/libpng-compat-1.2.58.tar.xz
 cd $PKG
 /sbin/makepkg -l y -c n $TMP/$PKGNAM-compat-$VERSION-$ARCH-$BUILD.txz
 
